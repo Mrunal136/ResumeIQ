@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: var(--theme-bg);
+  --color-surface: var(--theme-surface);
+  --color-surface-hover: var(--theme-surface-hover);
+  --color-surface-alt: var(--theme-surface-alt);
+
+  --color-border: var(--theme-border);
+  --color-border-light: var(--theme-border-light);
+
+  --color-primary: var(--theme-primary);
+  --color-primary-hover: var(--theme-primary-hover);
+  --color-primary-soft: var(--theme-primary-soft);
+
+  --color-accent: var(--theme-accent);
+  --color-accent-hover: var(--theme-accent-hover);
+  --color-accent-soft: var(--theme-accent-soft);
+
+  --color-warm: var(--theme-warm);
+  --color-warm-hover: var(--theme-warm-hover);
+  --color-warm-soft: var(--theme-warm-soft);
+
+  --color-info: var(--theme-info);
+  --color-info-soft: var(--theme-info-soft);
+
+  --color-text: var(--theme-text);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-inverse: var(--theme-text-inverse);
+
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", system-ui, sans-serif;
+}
+
+:root {
+  --theme-bg: #f5f2ea;
+  --theme-surface: rgba(255, 255, 255, 0.82);
+  --theme-surface-hover: #ece5d6;
+  --theme-surface-alt: #dfd3c0;
+
+  --theme-border: rgba(36, 53, 53, 0.12);
+  --theme-border-light: rgba(36, 53, 53, 0.18);
+
+  --theme-primary: #0f766e;
+  --theme-primary-hover: #115e59;
+  --theme-primary-soft: rgba(15, 118, 110, 0.12);
+
+  --theme-accent: #174e73;
+  --theme-accent-hover: #123c59;
+  --theme-accent-soft: rgba(23, 78, 115, 0.12);
+
+  --theme-warm: #c96a28;
+  --theme-warm-hover: #a95317;
+  --theme-warm-soft: rgba(201, 106, 40, 0.14);
+
+  --theme-info: #3f6fb8;
+  --theme-info-soft: rgba(63, 111, 184, 0.12);
+
+  --theme-text: #122526;
+  --theme-text-secondary: #3f5252;
+  --theme-text-muted: #6d7b7a;
+  --theme-text-inverse: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --theme-bg: #0d1717;
+    --theme-surface: rgba(17, 30, 30, 0.84);
+    --theme-surface-hover: #162626;
+    --theme-surface-alt: #1e3332;
+
+    --theme-border: rgba(191, 213, 213, 0.12);
+    --theme-border-light: rgba(191, 213, 213, 0.18);
+
+    --theme-primary: #5ed1c4;
+    --theme-primary-hover: #78ddd2;
+    --theme-primary-soft: rgba(94, 209, 196, 0.12);
+
+    --theme-accent: #7fb7e6;
+    --theme-accent-hover: #93c3eb;
+    --theme-accent-soft: rgba(127, 183, 230, 0.12);
+
+    --theme-warm: #f0a160;
+    --theme-warm-hover: #f4b077;
+    --theme-warm-soft: rgba(240, 161, 96, 0.14);
+
+    --theme-info: #99b8ff;
+    --theme-info-soft: rgba(153, 184, 255, 0.12);
+
+    --theme-text: #edf5f2;
+    --theme-text-secondary: #bfd1cf;
+    --theme-text-muted: #8fa3a1;
+    --theme-text-inverse: #0d1717;
+  }
+}
+
+.dark {
+  --theme-bg: #0d1717;
+  --theme-surface: rgba(17, 30, 30, 0.84);
+  --theme-surface-hover: #162626;
+  --theme-surface-alt: #1e3332;
+
+  --theme-border: rgba(191, 213, 213, 0.12);
+  --theme-border-light: rgba(191, 213, 213, 0.18);
+
+  --theme-primary: #5ed1c4;
+  --theme-primary-hover: #78ddd2;
+  --theme-primary-soft: rgba(94, 209, 196, 0.12);
+
+  --theme-accent: #7fb7e6;
+  --theme-accent-hover: #93c3eb;
+  --theme-accent-soft: rgba(127, 183, 230, 0.12);
+
+  --theme-warm: #f0a160;
+  --theme-warm-hover: #f4b077;
+  --theme-warm-soft: rgba(240, 161, 96, 0.14);
+
+  --theme-info: #99b8ff;
+  --theme-info-soft: rgba(153, 184, 255, 0.12);
+
+  --theme-text: #edf5f2;
+  --theme-text-secondary: #bfd1cf;
+  --theme-text-muted: #8fa3a1;
+  --theme-text-inverse: #0d1717;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(201, 106, 40, 0.1), transparent 25%),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.24);
+  color: var(--color-text);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.45s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass {
+  background: color-mix(in srgb, var(--theme-surface) 82%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(to right, rgba(73, 93, 93, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(73, 93, 93, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
