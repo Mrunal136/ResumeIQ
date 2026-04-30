@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+motor
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+pymupdf
+python-docx
+pydantic[email]
+sentence-transformers
+spacy
+pdfplumber
+google-generativeai
